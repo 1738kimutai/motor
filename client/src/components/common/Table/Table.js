@@ -19,14 +19,14 @@ const Table = ({ data, onDelete, onEdit, onToggle }) =>{
                         Admin
                        </button>
                 )
-                if (value === Role.SUPER_ADMIN)
-                  return(
-                    <button
-                      onClick={()=> onToggle(row)}
-                      className="super-admin">
-                        Super Admin
-                      </button>
-                )
+                // if (value === Role.SUPER_ADMIN)
+                //   return(
+                //     <button
+                //       onClick={()=> onToggle(row)}
+                //       className="super-admin">
+                //         Super Admin
+                //       </button>
+                // )
             case EntryType.TOGGLE:
                 if(value === ToggleState.PENDING)
                    return (
