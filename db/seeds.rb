@@ -1,23 +1,24 @@
 
-#Create 20 random Users 
-20.times do
-    user = User.create(
-      name: Faker::Name.name, 
-        #it shoudl be Name.name and NOT Internet.name 
-      email: Faker::Internet.email, 
-      password_digest: Faker::Internet.password,
-      age: rand(24..70),
-      gender: ["Female", "Male"].sample
-    )
-  end
+#Create 10 random Users 
+
+user1=User.create(username: "kante", email: "kante@kante", password_digest: "1234", age: 35,role:"user")
+user2=User.create(username: "manu", email: "manu@manu", password_digest: "1334", age: 32,role:"user")
+user3=User.create(username: "leah", email: "leah@leah", password_digest: "1114", age: 28,role:"user")
+user4=User.create(username: "kani", email: "kani@kani", password_digest: "1777", age: 26,role:"user")
+user5=User.create(username: "james", email: "james@james", password_digest: "1834", age: 33,role:"admin")
+user6=User.create(username: "lito", email: "klito@lito", password_digest: "1934", age: 27,role:"user")
+user7=User.create(username: "nina", email: "nina@nina", password_digest: "13774", age: 28,role:"user")
+user8=User.create(username: "johny", email: "johny@johny", password_digest: "1264", age: 33,role:"user")
+user9=User.create(username: "ela", email: "kela@ela", password_digest: "1904", age: 24,role:"user")
+user10=User.create(username: "ida", email: "ida@ida", password_digest: "1534", age:30,role:"user")
   
 #Create a showroom 
   
   show_room = ShowRoom.create(
     name: "Motor-Hub",
     address: "123 Main Street",
-    owner: "John Doe",
-    start_year: 1990
+    location: "Nairobi",
+    start_year: 1998
   )
   
 
@@ -216,14 +217,13 @@ car20=Car.create(
 
     )
 
-    #Should come after the user and car id 
+   #Should come after the user and car id 
 
     15.times do 
         review = Review.create(
           user_id: rand(1..20),
           car_id: rand(1..20),
-                #changed sentence to paragraph for description 
-          description: Faker::Lorem.paragraph,
-          comments: Faker::Lorem.sentence
+        rating: rand(1..5),
+        comments: Faker::Lorem.sentence
         )
       end
